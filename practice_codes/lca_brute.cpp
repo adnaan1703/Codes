@@ -7,8 +7,8 @@ void populate_by_dfs(vector<vector<int> > &tree, int root, int parentNode, vecto
 
 	parent[root] = parentNode;
 	for(auto itr = tree[root].begin(); itr != tree[root].end(); ++itr) {
-		// keep a check if the node *itr is not parent in case of bi-tree here it is not hence no check.
-		populate_by_dfs(tree, *itr, root, parent, height);
+		if( *itr != parentNode)
+			populate_by_dfs(tree, *itr, root, parent, height);
 	}
 }
 

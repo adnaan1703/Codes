@@ -12,7 +12,8 @@ void populate_by_dfs(vector<vector<int> > &tree, int root, int p, vector<vector<
 			parent[root][i] = parent[parent[root][i-1]][i-1];
 
 	for(auto itr = tree[root].begin(); itr != tree[root].end(); ++itr)
-		populate_by_dfs(tree, *itr, root, parent, height);
+		if( *itr != p)
+			populate_by_dfs(tree, *itr, root, parent, height);
 
 }
 
