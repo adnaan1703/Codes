@@ -14,9 +14,9 @@ public:
 
 	PrimeGenerator() {
 
-		lp = vector<int>(1000001, 0);
-		map = vector<bool>(1000001, false);
 		N = 1000000;
+		lp = vector<int>(N+1, 0);
+		map = vector<bool>(N+1, false);
 
 		
 		for (int i = 2; i <= N; ++i) {
